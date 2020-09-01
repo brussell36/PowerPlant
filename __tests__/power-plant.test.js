@@ -1,9 +1,9 @@
-import {stateControl, blueFood, hydrate, storeState} from "./../src/power-plant.js";
+import {stateControl, blueFood, hydrate} from "./../src/power-plant.js";
 
 describe('Plant', () => {
   
   beforeEach(() => {
-    storeState();
+    stateControl();
   });
 
   afterEach(() => {
