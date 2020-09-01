@@ -12,6 +12,8 @@ export const blueFood = changeState("soil")(5);
 export const greenFood = changeState("soil")(10);
 export const yuckyFood = changeState("soil")(-5);
 
+export const hydrate = changeState("water")(1);
+
 export const storeState = ( ) => {
   let currentState = {};
   return (stateChangeFunction = state => state) => {
