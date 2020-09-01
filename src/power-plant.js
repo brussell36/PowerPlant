@@ -23,11 +23,14 @@ export const storeState = (initialState) => {
     return newState;
   };
 };
-export const violete = { soil:10, water:10 };
-export const fern = {soil:15, water:12};
 
-export const stateControl = storeState(violete);
+export const violete = { soil: 30, water: 30 };
+export const fern = { soil: 15, water: 12 };
 
+// export const plants = [violete, fern];
+export const violeteState = storeState(violete);
+export const fernState = storeState(fern);
+export const stateControl = storeState();
 
 export const soilTimer = changeState("soil")(-1);
 export const waterTimer = changeState("water")(-1);

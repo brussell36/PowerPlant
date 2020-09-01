@@ -2,14 +2,14 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from "jquery";
-import {stateControl, blueFood, superWater, soilTimer, waterTimer} from './../src/power-plant.js';
+import {stateControl, blueFood, superWater, soilTimer, waterTimer, violeteState, fernState} from './../src/power-plant.js';
 
 $(document).ready(function() {
 
   setInterval(function() {
     stateControl(soilTimer);
     stateControl(waterTimer);
-  },1000);
+  },3000);
 
   setInterval(function() {
     const currentState = stateControl();
@@ -33,8 +33,19 @@ $(document).ready(function() {
     $('#water-value').text(`Water: ${newState.water}`);
   });
 
-  $('#show-state').click(function() {
-    const currentState = stateControl();
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  $('#violete').click(function() {
+    $('.plant-game').show();
+    $('.plant-choose').hide();
+    const newState = stateControl(violeteState);
+    $('#soil-value').text(`Soil: ${newState.soil}`);
+    $('#water-value').text(`Water: ${newState.water}`);
+  });
+
+  $('#fern').click(function() {
+    $('.plant-game').show();
+    $('.plant-choose').hide();
+    const newState = stateControl(fernState);
+    $('#soil-value').text(`Soil: ${newState.soil}`);
+    $('#water-value').text(`Water: ${newState.water}`);
   });
 });
